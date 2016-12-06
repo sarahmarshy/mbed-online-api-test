@@ -79,8 +79,8 @@ if __name__ == '__main__':
             result_exp = export_repo(target, test)
             result = build_repo(target,test)
             results.append((target, test, "compile",result))
-            results.append((target, test, "export", result))
-            passes += (int)(result)
+            results.append((target, test, "export", result_exp))
+            passes += (int)(result and result_exp)
     print("%s/%s passing" % (passes, total))
     print_results(results)
 
